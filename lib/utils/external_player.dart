@@ -3,7 +3,10 @@ import 'dart:io';
 import 'package:android_intent_plus/android_intent.dart';
 import 'package:url_launcher/url_launcher_string.dart';
 
-Future<void> launchMobileExternalPlayer(String playUrl, String player) async {
+// MOD (10.14.2023) - BEGIN : Added extraArgs
+Future<void> launchMobileExternalPlayer(String playUrl, String player,
+    [Map<String, dynamic>? extraArgs]) async {
+// MOD (10.14.2023) - END
   switch (player) {
     case "vlc":
       await _launchExternalPlayer("vlc://$playUrl");
@@ -13,6 +16,9 @@ Future<void> launchMobileExternalPlayer(String playUrl, String player) async {
         action: 'action_view',
         data: playUrl,
         type: 'video/*',
+        // MOD (10.14.2023) - BEGIN : Added extraArgs
+        arguments: extraArgs,
+        // MOD (10.14.2023) - END
       ).launch();
       break;
   }

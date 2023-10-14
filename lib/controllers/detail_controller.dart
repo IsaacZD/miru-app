@@ -353,7 +353,10 @@ class DetailPageController extends GetxController {
         }
         try {
           if (GetPlatform.isMobile) {
-            await launchMobileExternalPlayer(watchData.url, player);
+            // MOD (10.14.2023) - BEGIN : Added danmu_hint for interacting with DanDanPlay
+            await launchMobileExternalPlayer(
+                watchData.url, player, {"danmu_hint": detail!.title});
+            // MOD (10.14.2023) - END
             return;
           }
           await launchDesktopExternalPlayer(watchData.url, player);
