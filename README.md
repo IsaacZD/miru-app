@@ -19,6 +19,10 @@ Miru App
 
 </h1>
 
+## Personal Customization
+
+- Auto fill the danmaku search field with Anime name when using DanDanPlay as external player. Mainly to avoid the tedious typing experience on TV. Need to use modified [DanDanPlay](https://github.com/IsaacZD/DanDanPlayForAndroid)
+
 ![screenshot](assets/screenshot/screenshot.webp)
 
 ## Features
